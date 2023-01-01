@@ -1,8 +1,6 @@
 package com.example.kpd_project;
 
 import android.os.Bundle;
-import android.os.BadParcelableException;
-import android.os.BadParcelableException;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
