@@ -112,16 +112,16 @@
             android:text="1. Connect device &quot;ATL Bluetooth&quot;" />
 
         <TextView
-            android:id="@+id/textView6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="2. Select the connected device" />
-
-        <TextView
             android:id="@+id/textView7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="3. Input SSID and password of your network" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2. Select the connected device" />
 
     </LinearLayout>
 
