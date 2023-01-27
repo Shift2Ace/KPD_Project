@@ -1,5 +1,6 @@
 package com.example.kpd_project;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -54,17 +55,19 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId()){
+            case R.id.add_device:
+                openAddDevice();
+                return true;
+            case R.id.target_device:
+                openTargetDevice();
+                return true;
+            case R.id.action_settings:
+                openSettings();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-
-        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -73,4 +76,18 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+    public void openAddDevice(){
+        Intent intent = new Intent(this, AddDevice.class);
+        startActivity(intent);
+    }
+    public void openTargetDevice(){
+        Intent intent = new Intent(this, TargetDevice.class);
+        startActivity(intent);
+    }
+    public void openSettings(){
+        Intent intent = new Intent(this, Setting.class);
+        startActivity(intent);
+    }
+
 }

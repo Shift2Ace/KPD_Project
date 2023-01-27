@@ -3,6 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.kpd_project.MainActivity">
     <item
+        android:id="@+id/add_device"
+        android:title="Add Device"></item>
+    <item
+        android:id="@+id/target_device"
+        android:title="Target Device" />
+    <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"
