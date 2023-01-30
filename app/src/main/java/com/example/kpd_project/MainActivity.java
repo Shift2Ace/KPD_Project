@@ -1,5 +1,6 @@
 package com.example.kpd_project;
 
+import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -57,7 +58,9 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.add_device:
-                openAddDevice();
+                if (checkBT()){
+                    openAddDevice();
+                };
                 return true;
             case R.id.target_device:
                 openTargetDevice();
@@ -89,5 +92,14 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Setting.class);
         startActivity(intent);
     }
-
+    public boolean checkBT(){
+        Boolean haveBT;
+        haveBT = true;
+        if (BluetoothAdapter.getDefaultAdapter() == null){
+            Dialog dialog = new Dialog();
+            dialog.show(getSupportFragmentManager(),"dialog");
+            haveBT = false;
+        }
+        return(haveBT);
+    }
 }
